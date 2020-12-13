@@ -15,3 +15,9 @@ please enter a number:
 10
 K
 "average is 7.5"
+
+# Resources
+
+- Beaz python course [https://github.com/dabeaz-course/practical-python/blob/master/Notes/Contents.md]
+- Effective Python
+- Structure and Interpretation of Computer Programs [https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html]
