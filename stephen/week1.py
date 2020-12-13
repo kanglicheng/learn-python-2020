@@ -6,11 +6,15 @@ import random
 
 
 def guessing_game():
-    number = random.randint(0, 100)
+    number = random.randint(1, 5)
     while True:
-        guess = input("Please enter a number between 1 and 100 (inclusive)")
+        guess = int(
+            input("Please enter a number between 1 and 5 (inclusive) "))
         if guess == number:
             return "correct!"
+
+
+print(guessing_game())
 
 
 """
@@ -24,3 +28,6 @@ def mysum(*numbers):
     for number in numbers:
         total += number
     return total
+
+
+print(mysum(1, 2, 3, 4, 5))
