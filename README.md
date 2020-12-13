@@ -4,3 +4,14 @@ Week 1: Implement the following: guess_number, mysum, and run_timing from "Pytho
 
 Exercise: Write a function that accepts a list of integers and returns the product
 i.e multiply_all([2, 3, 3]) -> 18
+
+Homework: Write a function average() that prompts for integer inputs and returns their average. If "K" or "k" is entered, the function exits and returns average of all numbers entered.
+
+average()
+please enter a number:
+5
+5
+10
+10
+K
+"average is 7.5"
