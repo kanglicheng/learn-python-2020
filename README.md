@@ -31,6 +31,11 @@ K
    Ask the user for a word, and return its Ubbi Dubbi form.
    examples: - elephant -> ubelubephubant. - octopus -> uboctubopubus
 
+3. **running average** Write a function get_average() that prompts the user to enter a sequence of space separated numbers. Return the average of that sequence.
+   examples: get_average()
+   1 2 3 4 5 6
+   "average is 3.5"
+
 # Resources
 
 - [Beaz practical python course](https://github.com/dabeaz-course/practical-python/blob/master/Notes/Contents.md)
