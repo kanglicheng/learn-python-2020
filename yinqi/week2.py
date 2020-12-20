@@ -1,6 +1,8 @@
 '''''
 week 2: pig latin
 '''''
+
+
 def pig_latin():
     vowel = ["a", "e", "i", "o", "u"]
     word = input("Please input a word: ")
@@ -11,6 +13,7 @@ def pig_latin():
         return(print(word[1:len(word)] + word[0] + "ay"))
 
 # pig_latin()
+
 
 def ubbi_dubbi():
     vowel = ["a", "e", "i", "o", "u"]
@@ -24,4 +27,15 @@ def ubbi_dubbi():
     final = "".join(output)
     return(print(final))
 
-ubbi_dubbi()
+# ubbi_dubbi()
+
+
+def get_running_avg():
+    numbers = input("enter the numbers: ")
+    numbers = numbers.split(" ")
+    array = [int(n) for n in numbers]
+    average = str(sum(array) / len(array))
+    print("The average is " + average)
+
+
+get_running_avg()
