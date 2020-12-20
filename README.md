@@ -1,10 +1,6 @@
 # learn-python-2020
 
-<<<<<<< HEAD
-## Week 1: 
-=======
 ###Week 1:
->>>>>>> b45be61477f47d8045d95e96d41aa2950889c9ff
 Implement the following: guess_number, mysum, and run_timing from "Python Workout"
 
 Exercise: Write a function that accepts a list of integers and returns the product
