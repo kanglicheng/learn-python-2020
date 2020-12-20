@@ -19,7 +19,21 @@ K
 
 ## week 2
 
+1. Pig Latin
+
 In Ubbi Dubbi, every vowel (a, e, i, o, or u) is prefaced with ub.
+Ask the user for a word, and return its Ubbi Dubbi form.
+
+2. If the word begins with a vowel (a, e, i, o, or u), add “way” to the end of the
+   word. So “air” becomes “airway” and “eat” becomes “eatway.”
+   If the word begins with any other letter, then we take the first letter, put it on
+   the end of the word, and then add “ay.” Thus, “python” becomes “ythonpay”
+   and “computer” becomes “omputercay.”
+
+examples:
+
+- elephant -> ubelubephubant.
+- octopus -> uboctubopubus
 
 # Resources
 
