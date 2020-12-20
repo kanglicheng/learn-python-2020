@@ -16,6 +16,10 @@ please enter a number:
 K
 "average is 7.5"
 
+## week 2
+
+In Ubbi Dubbi, every vowel (a, e, i, o, or u) is prefaced with ub.
+
 # Resources
 
 - Beaz python course [https://github.com/dabeaz-course/practical-python/blob/master/Notes/Contents.md]
