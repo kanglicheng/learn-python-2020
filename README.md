@@ -36,8 +36,14 @@ K
    1 2 3 4 5 6
    "average is 3.5"
 
+### week 3
+
+1. Write a function most_repeating(words) that takes in a list of words and returns the word with the most repeating letters. Assuming input strings are only lowercase.
+   words = ['this', 'is', 'an', 'elementary', 'test', 'example']
+   most_repeating(words) -> "elementary", e is repeated 3 times
+
 # Resources
 
 - [Beaz practical python course](https://github.com/dabeaz-course/practical-python/blob/master/Notes/Contents.md)
-- Effective Python
+- [Effective Python](https://books.google.com/books?id=bTUFCAAAQBAJ&newbks=1&newbks_redir=0&lpg=PP1&dq=effective%20python&pg=PP1#v=onepage&q=effective%20python&f=false)
 - [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html)
