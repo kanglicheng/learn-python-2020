@@ -23,4 +23,16 @@ def ubbi_dubbi():
     print(outword)
 
 
-ubbi_dubbi()
+# ubbi_dubbi()
+
+def get_running_avg():
+    numbers = input("enter the numbers: ")
+    numbers = numbers.split(" ")
+    total = 0
+    for n in numbers:
+        total += int(n)
+    txt = "average is {:.1f}".format(total/len(numbers))
+    print(txt)
+
+
+get_running_avg()
