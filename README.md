@@ -44,6 +44,12 @@ K
 
 # Resources
 
+### Python
+
 - [Beaz practical python course](https://github.com/dabeaz-course/practical-python/blob/master/Notes/Contents.md)
 - [Effective Python](https://books.google.com/books?id=bTUFCAAAQBAJ&newbks=1&newbks_redir=0&lpg=PP1&dq=effective%20python&pg=PP1#v=onepage&q=effective%20python&f=false)
+
+### General programming
+
+- [Google technical development guide](https://techdevguide.withgoogle.com/)
 - [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html)
