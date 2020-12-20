@@ -1,10 +1,6 @@
 # learn-python-2020
 
-<<<<<<< HEAD
-## Week 1: 
-=======
 ###Week 1:
->>>>>>> b45be61477f47d8045d95e96d41aa2950889c9ff
 Implement the following: guess_number, mysum, and run_timing from "Python Workout"
 
 Exercise: Write a function that accepts a list of integers and returns the product
@@ -34,6 +30,11 @@ K
 2. In **Ubbi Dubbi**, every vowel (a, e, i, o, or u) is prefaced with ub.
    Ask the user for a word, and return its Ubbi Dubbi form.
    examples: - elephant -> ubelubephubant. - octopus -> uboctubopubus
+
+3. **running average** Write a function get_average() that prompts the user to enter a sequence of space separated numbers. Return the average of that sequence.
+   examples: get_average()
+   1 2 3 4 5 6
+   "average is 3.5"
 
 # Resources
 
