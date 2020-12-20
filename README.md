@@ -33,6 +33,6 @@ K
 
 # Resources
 
-- Beaz python course [https://github.com/dabeaz-course/practical-python/blob/master/Notes/Contents.md]
+- [Beaz practical python course](https://github.com/dabeaz-course/practical-python/blob/master/Notes/Contents.md)
 - Effective Python
-- Structure and Interpretation of Computer Programs [https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html]
+- [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html)
