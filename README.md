@@ -38,9 +38,17 @@ K
 
 ### week 3
 
-1. Write a function most_repeating(words) that takes in a list of words and returns the word with the most repeating letters. Assuming input strings are only lowercase.
+**Dictionary, set**
+Dictionaries are python's hashtables, they store key-value pairs. Sets are also hash-based data structures, they are typically used to maintain a unique collection. A dictionary is created by using a pair of brackets, {}. They are especially useful for tracking information either by accumulation or updates. For example, given a list of words, find the letter(s) that appeared most frequently. Key access is O(1) since the location is determined by hashing and not by scanning. Similarly sets are useful for checking containment in O(1) time, for example, keeping track of visited nodes in graph traversal (bfs, dfs, etc).
+
+1. Total rainfall by city (data organization exercise). Write a function that takes a list of tuples that represent rainfall data collected in the format (city, rainfall) and returns a dictionary displaying each city, and the total rainfall observed.
+   example: `get_rainfall([("boston", 10), ("sf", 5), ("seattle", 20), ("sf", 3), ("boston", 5)]) -> {"boston":15, "seattle": 20, "sf":8}`
+2. Inventory/menu exercise- Declare a constant menu dictionary with initial values `MENU = {'sandwich': 10, 'tea': 7, 'salad': 9} `. Then write a function take_order() that prompts the user for an item. If the item is available, print "OK" and update the inventory , otherwise if the item is not in the menu or has no inventory left, print "item not available".
+3. Write a function most_repeating(words) that takes in a list of words and returns the word with the most repeating letters. Assuming input strings are only lowercase.
    words = ['this', 'is', 'an', 'elementary', 'test', 'example']
    most_repeating(words) -> "elementary", e is repeated 3 times
+4. Write a function, called how_many_different, that
+   takes a single list of integers and returns the number of different integers it contains. example: how_many_different([1, 2, 1, 1, 3]) -> 3
 
 # Resources
 
