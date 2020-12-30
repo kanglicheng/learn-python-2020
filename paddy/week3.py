@@ -36,11 +36,8 @@ def most_repeat(lst):
     final = lst[0]
     for item in lst:
         dct = {}
-        for i in item:
-            if i not in dct:
-                dct[i] = 1
-            else:
-                dct[i] += 1
+        for ch in item:
+            dct[ch] = dct[ch].get(ch, 0) + 1
         if max(dct.values()) > maxrep:
             maxrep = max(dct.values())
             final = item
