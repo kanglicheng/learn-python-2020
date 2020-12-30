@@ -1,3 +1,5 @@
+from collections import Counter
+from distutils.archive_util import make_zipfile
 from typing import List, Tuple
 
 
@@ -51,4 +53,31 @@ def take_order():
             print("item not sold here")
 
 
-take_order()
+def most_repeating_chars(words):
+    max_count = 1
+    most_frequent = words[0]
+    for word in words:
+        counts = Counter(word)
+        if max(counts.values()) > max_count:
+            max_count = max(counts.values())
+            most_frequent = word
+    return most_frequent
+
+
+# returns the most frequently appearing word in words
+
+
+def most_frequent(words):
+    word_dict = {}
+    most_frequent = words[0]
+    max_count = 1
+    for word in words:
+        word_dict[word] = word_dict.get(word, 0) + 1
+        if word_dict[word] > max_count:
+            max_count = word_dict[word]
+            most_frequent = word
+    return most_frequent
+
+
+print(most_repeating_chars(
+    ['this', 'is', 'an', 'elementary', 'test', 'example']))
