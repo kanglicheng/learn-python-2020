@@ -53,9 +53,27 @@ Dictionaries are python's hashtables, they store key-value pairs. Sets are also 
 4. Write a function, called how_many_different, that
    takes a single list of integers and returns the number of different integers it contains. example: how_many_different([1, 2, 1, 1, 3]) -> 3
 
-### week, Classes, Object-oriented programming 4
+### week 4, Classes, Object-oriented programming
 
 - [Introduction to classes](https://docs.python.org/3.7/tutorial/classes.html)
+  In this exercise, you’ll define a class, Scoop, that represents a single scoop of ice cream. Each scoop should have a single attribute, flavor, a string that you can initialize
+  when you create the instance of Scoop.
+  Once your class is created, write a function, not in Scoop class (create_scoops) that creates three instances of the Scoop class, each of which has a different flavor, and puts three instances into a list called scoops (figure 9.2). Finally, iterate over your
+  scoops list, printing the flavor of each scoop of ice cream you’ve created.
+  i.e my_scoop = Scope("vanilla")
+  print(my_scoop.flavor) -> "vanilla"
+
+  **Animals**
+  In this exercise, we want to create a set of classes to represent animals in a zoo. We’re going to assume that our zoo contains four different types of animals: sheep,
+  wolves, snakes, and parrots. (The zoo is going through some budgetary difficulties, so
+  our animal collection is both small and unusual.) Create classes for each of these types, such that we can print each of them and get a report on their color, species, and
+  number of legs.
+
+  i.e.
+  s = Sheep('white')
+  print(s.species)
+  print(s.color)
+  print(s.number_of_legs)
 
 ### Python
 
