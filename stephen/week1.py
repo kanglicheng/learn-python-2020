@@ -14,7 +14,7 @@ def guessing_game():
             return "correct!"
 
 
-print(guessing_game())
+# print(guessing_game())
 
 
 """
@@ -30,4 +30,26 @@ def mysum(*numbers):
     return total
 
 
-print(mysum(1, 2, 3, 4, 5))
+#print(mysum(1, 2, 3, 4, 5))
+
+
+def get_avg():
+    # taking number from user enter number through string message
+    # stores them in an array and then averages values in array5
+    total = 0
+    count = 0
+    while True:
+
+        user_input = input("enter a number: ")
+        try:
+            n = int(user_input)
+            count += 1
+        except:
+            break
+        total += n
+    if count > 0:
+        print(total/count)
+    return
+
+
+get_avg()
