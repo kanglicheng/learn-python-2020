@@ -1,6 +1,8 @@
 # learn-python-2020
 
-### week 1:
+Note: to view this file in VS code, install "markdown preview enhanced" by Yiyi Wang. cmd-shift v (ctrl-shift v)to open preview to side.
+
+###Week 1:
 Implement the following: guess_number, mysum, and run_timing from "Python Workout"
 
 Exercise: Write a function that accepts a list of integers and returns the product
@@ -43,14 +45,35 @@ Dictionaries are python's hashtables, they store key-value pairs. Sets are also 
 
 1. Total rainfall by city (data organization exercise). Write a function that takes a list of tuples that represent rainfall data collected in the format (city, rainfall) and returns a dictionary displaying each city, and the total rainfall observed.
    example: `get_rainfall([("boston", 10), ("sf", 5), ("seattle", 20), ("sf", 3), ("boston", 5)]) -> {"boston":15, "seattle": 20, "sf":8}`
-2. Inventory/menu exercise- Declare a constant menu dictionary with initial values `MENU = {'sandwich': 10, 'tea': 7, 'salad': 9} `. Then write a function take_order() that prompts the user for an item. If the item is available, print "OK" and update the inventory , otherwise if the item is not in the menu or has no inventory left, print "item not available".
-3. Write a function most_repeating(words) that takes in a list of words and returns the word with the most repeating letters. Assuming input strings are only lowercase.
+2. Inventory/menu exercise- Declare a constant menu dictionary with initial values `MENU = {'sandwich': 10, 'tea': 7, 'salad': 9} `. Then write a function take_order() that prompts the user for an item. If the item is available, print "OK" and update the inventory , otherwise if the item is not in the menu or has no inventory left, print "item not available". example: `take_order(), "salad", "salad", "tea",` now `MENU = {'sandwich': 10, 'tea': 6, 'salad': 7} `
+
+3. Write a function most_repeating(words) that takes in a list of words and returns the word with the most repeating letters. Assuming input strings are only lowercase and that there is a single word with highest occurence.
    words = ['this', 'is', 'an', 'elementary', 'test', 'example']
    most_repeating(words) -> "elementary", e is repeated 3 times
 4. Write a function, called how_many_different, that
    takes a single list of integers and returns the number of different integers it contains. example: how_many_different([1, 2, 1, 1, 3]) -> 3
 
-# Resources
+### week 4, Classes, Object-oriented programming
+
+- [Introduction to classes](https://docs.python.org/3.7/tutorial/classes.html)
+  In this exercise, you’ll define a class, Scoop, that represents a single scoop of ice cream. Each scoop should have a single attribute, flavor, a string that you can initialize
+  when you create the instance of Scoop.
+  Once your class is created, write a function, not in Scoop class (create_scoops) that creates three instances of the Scoop class, each of which has a different flavor, and puts three instances into a list called scoops (figure 9.2). Finally, iterate over your
+  scoops list, printing the flavor of each scoop of ice cream you’ve created.
+  i.e my_scoop = Scope("vanilla")
+  print(my_scoop.flavor) -> "vanilla"
+
+  **Animals**
+  In this exercise, we want to create a set of classes to represent animals in a zoo. We’re going to assume that our zoo contains four different types of animals: sheep,
+  wolves, snakes, and parrots. (The zoo is going through some budgetary difficulties, so
+  our animal collection is both small and unusual.) Create classes for each of these types, such that we can print each of them and get a report on their color, species, and
+  number of legs.
+
+  i.e.
+  s = Sheep('white')
+  print(s.species)
+  print(s.color)
+  print(s.number_of_legs)
 
 ### Python
 
