@@ -11,4 +11,17 @@ def play_game():
             print("too large")
         else :
             print("too small")
-play_game()
+#play_game()
+
+
+
+def multiply_all(list):
+    pdt = 1
+    for i in list:
+        pdt = pdt * i
+    print(pdt)
+    return
+
+#multiply_all([2,9,10])
+str1 = "I like nonsense, it wakes up the brain cells. Fantasy is a necessary ingredient in living."
+print(len(str1))
