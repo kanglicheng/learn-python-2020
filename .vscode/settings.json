@@ -6,7 +6,9 @@
     "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
     "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
     "window.zoomLevel": 0,
-    "[python]": {},
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
     "files.associations": {
         "*.py": "python"
     },
@@ -17,8 +19,6 @@
         "editor.codeActionsOnSave": {},
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
-    "jshint.enable": false,
-    "eslint.alwaysShowStatus": true,
     "eslint.format.enable": true,
     "eslint.lintTask.enable": true,
     "git.autofetch": true,
@@ -26,29 +26,9 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Pylance",
-    "workbench.editorAssociations": [{
-        "viewType": "jupyter.notebook.ipynb",
-        "filenamePattern": "*.ipynb"
-    }],
-    "auto-close-tag.activationOnLanguage": [
-
-        "*"
-    ],
     "[typescriptreact]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
-    "[jsonc]": {
-        "editor.defaultFormatter": "HookyQR.beautify"
-    },
-    "[css]": {
-        "editor.defaultFormatter": "HookyQR.beautify"
-    },
     "python.analysis.typeCheckingMode": "basic",
-    "pylance.insidersChannel": "daily",
     "python.analysis.completeFunctionParens": true,
-    "auto-close-tag.disableOnLanguage": [
-        "cpp",
-    ],
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-    "beautify.ignore": ""
 }
