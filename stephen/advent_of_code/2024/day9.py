@@ -106,7 +106,9 @@ def calculate_checksum(disk_map):
 
     # Calculate the checksum
     checksum = sum(
-        position * block for position, block in enumerate(disk_blocks) if block != "."
+        position * int(block)
+        for position, block in enumerate(disk_blocks)
+        if block != "."
     )
 
     return checksum
@@ -115,5 +117,131 @@ def calculate_checksum(disk_map):
 # Replace 'disk_map_input' with your actual puzzle input (a single, very long line of digits)
 disk_map_input = open("input9.txt", encoding="utf-8").read().strip()
 
-checksum = calculate_checksum(disk_map_input)
-print(f"The resulting filesystem checksum is: {checksum}")
+# checksum = calculate_checksum(disk_map_input)
+# print(f"The resulting filesystem checksum is: {checksum}")
+
+# --- Part Two ---
+"""
+Compacting the amphipod's hard drive was a success! You've earned the amphipod's trust and gratitude.
+
+This time, attempt to move whole files to the leftmost span of free space blocks
+ that could fit the file. Attempt to move each file exactly once in order of decreasing
+file ID number starting with the file with the highest file ID number. If there is no span of free space to
+     the left of a file that is large enough to fit the file, the file does not move.
+
+The first example from above now proceeds differently:
+
+00...111...2...333.44.5555.6666.777.888899
+0099.111...2...333.44.5555.6666.777.8888..
+0099.1117772...333.44.5555.6666.....8888..
+0099.111777244.333....5555.6666.....8888..
+00992111777.44.333....5555.6666.....8888..
+The process of updating the filesystem checksum is the same; now, this example's checksum would be 2858.
+
+Start over, now compacting the amphipod's hard drive using this new method instead. What is the resulting filesystem checksum?
+"""
+
+
+def calculate_checksum_v2(disk_map):
+    # Parse the disk map into file and space segments
+    segments = []
+    is_file = True
+    for digit in disk_map:
+        length = int(digit)
+        segments.append((length, is_file))
+        is_file = not is_file
+
+    # Build the initial disk blocks with file IDs and free spaces
+    disk_blocks = []
+    file_id = 0
+    for length, is_file in segments:
+        if is_file:
+            disk_blocks.extend([file_id] * length)
+            file_id += 1
+        else:
+            disk_blocks.extend(["."] * length)
+
+    # Simulate the new compaction process
+    for current_file_id in range(file_id - 1, -1, -1):
+        # Find the current file blocks
+        file_blocks = [
+            i for i, block in enumerate(disk_blocks) if block == current_file_id
+        ]
+        if not file_blocks:
+            continue
+
+        leftmost_block = min(file_blocks)
+        file_length = len(file_blocks)
+
+        # Find the leftmost span of free space that can fit the file
+        suitable_span_found = False
+        for i in range(leftmost_block - file_length + 1):
+            if all(block == "." for block in disk_blocks[i : i + file_length]):
+                # Move the file to this span of free space
+                for j in range(file_length):
+                    disk_blocks[i + j] = current_file_id
+                for j in file_blocks:
+                    disk_blocks[j] = "."
+                suitable_span_found = True
+                break
+
+        if not suitable_span_found:
+            # If no suitable span is found, the file does not move
+            continue
+
+    # Calculate the checksum
+    checksum = sum(
+        position * block for position, block in enumerate(disk_blocks) if block != "."
+    )
+
+    return checksum
+
+
+# checksum_v2 = calculate_checksum_v2(disk_map_input)
+# print(f"The resulting filesystem checksum for part two is: {checksum_v2}")
+
+
+def solve3(disk_map):
+    cur_id = 0
+    id_to_length = dict()
+    row = []
+    for idx, val in enumerate(disk_map):
+        if idx % 2 == 1:
+            row.extend(["."] * int(val))
+        else:
+            row.extend([cur_id] * int(val))
+            id_to_length[cur_id] = int(val)
+            cur_id += 1
+    file_ids = sorted(list(id_to_length.keys()))
+    while file_ids:
+        cur_id = file_ids.pop()
+        start_idx = row.index(cur_id)
+        can_move = False
+        for i in range(0, start_idx):
+            if row[i] == ".":
+                can_move = True
+        if not can_move:
+            break
+        cur_length = id_to_length[cur_id]
+        for idx, val in enumerate(row):
+            if row[idx] == cur_id:
+                break
+            if idx + cur_length >= len(row):
+                break
+            if val == "." and all(x == "." for x in row[idx : idx + cur_length]):
+                for i in range(cur_length):
+                    row[idx + i] = cur_id
+                for i in range(idx + cur_length, len(row)):
+                    if row[i] == cur_id:
+                        row[i] = "."
+                break
+    check_sum = 0
+    for idx, val in enumerate(row):
+        if val == ".":
+            continue
+        check_sum += idx * val
+    print(check_sum)
+
+
+disk_map_input = open("input9.txt", encoding="utf-8").read().strip()
+solve3(disk_map_input)
