@@ -61,8 +61,6 @@ def solve_day_12(matrix: list[list[str]]) -> int:
                         ch = ch + str(random.randint(0, 10))
                     symbol_to_data[ch] = {"area": area, "perimeter": perimeter}
 
-    for k, v in symbol_to_data.items():
-        print(k, v)
     result = sum(data["area"] * data["perimeter"] for data in symbol_to_data.values())
     print(result)
 

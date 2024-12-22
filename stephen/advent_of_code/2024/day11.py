@@ -1,4 +1,15 @@
+"""
+If the stone is engraved with the number 0, it is replaced by a stone engraved with the number 1.
+If the stone is engraved with a number that has an even number of digits, 
+it is replaced by two stones. The left half of the digits are engraved on the new left stone,
+and the right half of the digits are engraved on the new right stone.
+(The new numbers don't keep extra leading zeroes: 1000 would become stones 10 and 0.)
+If none of the other rules apply, the stone is replaced by a new stone; the old stone's 
+number multiplied by 2024 is engraved on the new stone.
+"""
+
 import sys
+
 
 sys.set_int_max_str_digits(100000000)
 
@@ -14,7 +25,7 @@ def replace_leading_zeroes(stone: str) -> int:
     return int(stone)
 
 
-def solve(nums: list[int], blinks=25) -> int:
+def solve(nums: list[int], blinks=75) -> int:
     """
     solves the problem for day 11
     """
@@ -37,17 +48,7 @@ def solve(nums: list[int], blinks=25) -> int:
     print(len(nums))
 
 
-"""
-If the stone is engraved with the number 0, it is replaced by a stone engraved with the number 1.
-If the stone is engraved with a number that has an even number of digits, it is replaced by two stones. 
-The left half of the digits are engraved on the new left stone, and the right half of the digits are engraved on the new right stone.
- (The new numbers don't keep extra leading zeroes: 1000 would become stones 10 and 0.)
-If none of the other rules apply, the stone is replaced by a new stone; the old stone's 
-number multiplied by 2024 is engraved on the new stone.
-"""
-
-
-with open("input11.txt", "r") as file:
+with open("input11.txt", "r", encoding="utf-8") as file:
     data = file.read().split(" ")
     int_input = []
     for i, n in enumerate(data):
