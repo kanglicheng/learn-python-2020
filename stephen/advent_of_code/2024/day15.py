@@ -17,7 +17,7 @@ Solve the problem for Day 15.
 # from re import S
 """
 
-from hmac import new
+from typing import List, Tuple
 
 
 def print_matrix(matrix):
@@ -27,7 +27,10 @@ def print_matrix(matrix):
 
 def update_warehouse_map(
     current_row, current_col, new_row, new_col, warehouse_map, delta
-):
+) -> Tuple[int, int]:
+    """
+    Update the robot and box position(s) AND return the new position of the robot
+    """
 
     if warehouse_map[new_row][new_col] == "#":
         return current_row, current_col
@@ -52,6 +55,8 @@ def update_warehouse_map(
             warehouse_map[next_row][next_col] = "@"
             warehouse_map[new_row][new_col] = "O"
             return next_row, next_col
+
+    return current_row, current_col
 
 
 def solve_day15(initial_row, initial_col, warehouse_map, robot_moves):
@@ -82,7 +87,7 @@ def solve_day15(initial_row, initial_col, warehouse_map, robot_moves):
         if ret:
             current_row, current_col = ret
 
-    print_matrix(warehouse_map)
+    # print_matrix(warehouse_map)
 
     gps_total = 0
     for i, row in enumerate(warehouse_map):
@@ -93,7 +98,7 @@ def solve_day15(initial_row, initial_col, warehouse_map, robot_moves):
     print(gps_total)
 
 
-with open("input15.txt", "r") as f:
+with open("input15.txt", "r", encoding="utf-8") as f:
     data = f.read().strip().split("\n")
     mapping = [["" for _ in range(len(data[0]))] for _ in range(len(data))]
     moves, found_moves = "", False
@@ -110,4 +115,21 @@ with open("input15.txt", "r") as f:
                 initial_row, initial_col = i, j
             mapping[i][j] = ch
 
-    solve_day15(initial_row, initial_col, mapping, moves)
+    solve_day15(
+        initial_row, initial_col, mapping, moves
+    )  # comment out if solving for part 2
+
+    # matrix remmaping for part 2
+    for i, row in enumerate(mapping):
+        new_row = []
+        for j, ch in enumerate(row):
+            if ch == "#":
+                new_row.extend(["#"] * 2)
+            elif ch == ".":
+                new_row.extend(["."] * 2)
+            elif ch == "O":
+                new_row.extend(["[", "]"])
+            elif ch == "@":
+                new_row.extend(["@", "."])
+
+        mapping[i] = new_row
